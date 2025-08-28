@@ -35,7 +35,7 @@ Download the script and make it executable:
 
 <code>sudo chmod +x fancontrol.py</code>
 
-Run the script and test it if it works:
+Run the script and test if it is working:
 
 <code>sudo python3 fancontrol.py</code>
 
@@ -43,15 +43,15 @@ Let’s make a Systemd Service so every time we reboot it will start automatical
 
 <code>sudo nano /etc/systemd/system/fancontrol.service</code>
 
-<mark>Copy and Paste the below:</mark>
+<mark>Copy and Paste the below and make the appropriate changes to the paths:</mark>
 
 <code>[Unit]
 Description=Fan Control Service
 After=multi-user.target</code>
 
 <code>[Service]
-ExecStart=/usr/bin/python3 /home/your_username/fancontrol.py #path to your script
-WorkingDirectory=/home/Bill/fancontrol
+ExecStart=/usr/bin/python3 /home/your_username/RPiGPIOFancontrol-main/fancontrol.py #path to your script
+WorkingDirectory=/home/your_username/RPiGPIOFancontrol-main #path to RPiGPIOFancontrol-main directory
 StandardOutput=journal
 StandardError=journal
 Restart=always

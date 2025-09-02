@@ -6,7 +6,7 @@ In my case the RPi handles a PiHole+PiVPN and my car's server alarm. I'm running
 
 
 This is a simplest version if the above are to much solderning and electronics.
-It's better to add a decoupling capacitor between +5VDC RPi power pin and GND. It depends on the fan you will use. <b>Also bear in mind the current limitations of RPi.</b>
+You may need to add a decoupling capacitor between +5VDC RPi power pin and GND. It depends on the fan you are going to use. <b>Also bear in mind the current limitations of RPi.</b>
 
 <img width="461" height="784" alt="Screenshot from 2025-08-27 17-20-58" src="https://github.com/user-attachments/assets/977d4394-85fe-4c90-904e-94c24eac37ad" />
 

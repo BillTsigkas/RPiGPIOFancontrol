@@ -1,9 +1,7 @@
 A simple Python script with some basic electronics for controlling (start/stop) your Raspberry Pi Zero 2 W cooling fan without the need for spinning 24/7 at full speed.
 In my case the RPi handles a PiHole+PiVPN and my car's server alarm. I'm running the fan at +4.1V, this is the most quite and effective voltage for proper cooling and of course for my ears. 🙂
 
-<img width="726" height="797" alt="Screenshot from 2025-08-27 17-16-20" src="https://github.com/user-attachments/assets/aa3be717-b1b4-4ac1-a913-30df4a9cef4c" />
-
-
+![Fan Control Raspberry Pi](https://github.com/user-attachments/assets/1d078fbf-3e8f-48e5-ad2a-fef980e5743c)
 
 This is a simplest version if the above are to much solderning and electronics.
 You may need to add a decoupling capacitor between +5VDC RPi power pin and GND. It depends on the fan you are going to use. <b>Also bear in mind the current limitations of RPi.</b>

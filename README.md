@@ -10,41 +10,52 @@ You may need to add a capacitor between +5VDC RPi pin and GND. It depends on the
 
 <img src="https://github.com/user-attachments/assets/45322af2-d82c-49bf-a290-6fb0d9c5ae36" width="300" height="600" />
 
+### Prerequisites:
 
-<b><fonsize>Prerequisites:</fontsize></b>
+<b>Ubuntu 22.04 (Didn’t test it with Ubuntu 24.04 on Rpi)</b>
 
-Ubuntu 22.04 (Didn’t test it with Ubuntu 24.04 on Rpi)
-```bash
+```ini
 sudo apt update
 sudo apt install lm-sensors
 ```
+
 After the installation check if the lm-sensors can read the CPU temperature:
-```bash
+
+```ini
 sensors
-or 
+```
+or
+```ini
 watch sensors
 ```
 
 If everything works proceed to the next step:
 
-<mark>Install python rpi.gpio library</mark>
-```bash
+<b>Installation of python rpi.gpio library</b>
+
+```ini
 sudo apt install python3-rpi.gpio
 ```
+
 Download the script and make it executable:
-```bash
+
+```ini
 sudo chmod +x fancontrol.py
 ```
 Run the script and test if it is working:
-```bash
+```ini
 sudo python3 fancontrol.py
 ```
+
 Let’s make a Systemd Service so every time we reboot our system it will start automatically:
-```bash
+
+```ini
 sudo nano /etc/systemd/system/fancontrol.service
 ```
+
 Copy and Paste the code below make the appropriate changes to the paths and save it:
-```bash
+
+```ini
 [Unit]
 Description=Fan Control Service
 After=multi-user.target
@@ -62,13 +73,15 @@ WantedBy=multi-user.target
 ```
 
 After that execute the below commands:
-```bash
+
+```ini
 sudo systemctl daemon-reload
 sudo systemctl enable fancontrol.service
 sudo systemclt start fancontrol.service</code>
 ```
 Check if the Service we just created working properly:
-```bash
+
+```ini
 sudo systemctl status fancontrol.py
 ```
 

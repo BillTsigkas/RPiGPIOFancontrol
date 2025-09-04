@@ -95,3 +95,5 @@ sudo systemctl status fancontrol.py
 <img width="500" height="500" alt="Screenshot from 2025-08-27 17-56-54" src="https://github.com/user-attachments/assets/674acf6a-7fb9-4e34-ba01-2cd6f2ccc304" />
 <img width="600" height="300" alt="Screenshot from 2025-08-27 17-57-40" src="https://github.com/user-attachments/assets/e3b5be5f-381e-4972-8896-14c8d264ca2f" />
 <img width="500" height="500" alt="Screenshot from 2025-08-27 17-56-15" src="https://github.com/user-attachments/assets/eae51b10-626f-4015-ba2c-afdbffac3aa4" />
+
+PS. We can make some code changes and use a software PWM frequency of 1kHz so we can make a duty cycle and control our fan speed but this is another story and 1kHz is really low for this kind of job.

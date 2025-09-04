@@ -11,12 +11,17 @@ You may need to add a capacitor between +5VDC RPi pin and GND, it depends on the
 
 <img src="https://github.com/user-attachments/assets/45322af2-d82c-49bf-a290-6fb0d9c5ae36" width="300" height="600" />
 
-### Prerequirements:
+## Prerequirements
 
-<b>Ubuntu 22.04 (Didn’t test it with Ubuntu 24.04 on Rpi)</b>
+<b>Ubuntu 22.04 (Didn’t test it with Ubuntu 24.04 on Rpi)</b><br>
+<b>Python3</b><br>
+<b>RPi.GPIO Library</b><br>
+<b>lm-sensors</b>
 
 ```ini
-sudo apt update
+sudo apt update && sudo apt upgrade
+sudo apt install python3
+sudo apt install python3-rpi.gpio
 sudo apt install lm-sensors
 ```
 
@@ -32,29 +37,23 @@ watch sensors
 
 If everything works proceed to the next step:
 
-<b>Installation of python rpi.gpio library</b>
-
-```ini
-sudo apt install python3-rpi.gpio
-```
-
-Download the script and make it executable:
+## Download the script and make it executable
 
 ```ini
 sudo chmod +x fancontrol.py
 ```
-Run the script and test if it is working:
+Run the script and test if it's working:
 ```ini
 sudo python3 fancontrol.py
 ```
 
-Let’s make a Systemd Service so every time we reboot our system it will start automatically:
+## Let’s make a Systemd Service so every time we reboot our system it will start automatically
 
 ```ini
 sudo nano /etc/systemd/system/fancontrol.service
 ```
 
-Copy and Paste the code below make the appropriate changes to the paths and save it:
+Copy and Paste inside the code below make the appropriate changes to the paths and save it:
 
 ```ini
 [Unit]
@@ -73,7 +72,7 @@ User=your_username
 WantedBy=multi-user.target
 ```
 
-After that execute the below commands:
+After that execute the commands below:
 
 ```ini
 sudo systemctl daemon-reload
@@ -86,7 +85,7 @@ Check if the Service we just created working properly:
 sudo systemctl status fancontrol.py
 ```
 
-And here it's my RPi Zero 2 W inside a ZTE H288A modem-router:
+## Here it's my RPi Zero 2 W inside a ZTE H288A modem-router:
 
 <img width="600" height="600" alt="Screenshot from 2025-08-27 17-53-39" src="https://github.com/user-attachments/assets/d8aec4b2-c259-44c5-ac9c-ee1d51d28f61" />
 <img width="400" height="600" alt="Screenshot from 2025-08-27 17-54-54" src="https://github.com/user-attachments/assets/f88c8fb8-1437-4dd2-aac2-5149f4c4d4a1" />

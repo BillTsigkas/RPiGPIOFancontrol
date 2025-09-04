@@ -14,38 +14,37 @@ You may need to add a capacitor between +5VDC RPi pin and GND. It depends on the
 <b><mark>Dependencies:</mark></b>
 
 Ubuntu 22.04 (Didn’t test it with Ubuntu 24.04 on Rpi)
-
-<code>sudo apt update</code>
-
-<code>sudo apt install lm-sensors</code>
-
+```ini
+sudo apt update
+sudo apt install lm-sensors
+```
 After the installation check if the lm-sensors can read the CPU temperature:
-
-<code>sensors</code>
+```ini
+sensors
 or 
-<code>watch sensors</code>
-
+watch sensors
+```
 
 If everything works proceed to the next step:
 
 <mark>Install python rpi.gpio library</mark>
-
-<code>sudo apt install python3-rpi.gpio</code>
-
+```ini
+sudo apt install python3-rpi.gpio
+```
 Download the script and make it executable:
-
-<code>sudo chmod +x fancontrol.py</code>
-
+```ini
+sudo chmod +x fancontrol.py
+```
 Run the script and test if it is working:
-
-<code>sudo python3 fancontrol.py</code>
-
+```ini
+sudo python3 fancontrol.py
+```
 Let’s make a Systemd Service so every time we reboot our system it will start automatically:
-
-<code>sudo nano /etc/systemd/system/fancontrol.service</code>
-
-<mark>Copy and Paste the code below make the appropriate changes to the paths and save it:</mark>
-
+```ini
+sudo nano /etc/systemd/system/fancontrol.service
+```
+Copy and Paste the code below make the appropriate changes to the paths and save it:
+```ini
 [Unit]
 Description=Fan Control Service
 After=multi-user.target
@@ -60,19 +59,20 @@ User=your_username
 
 [Install]
 WantedBy=multi-user.target
+```
 
 After that execute the below commands:
-
-<code>sudo systemctl daemon-reload
+```ini
+sudo systemctl daemon-reload
 sudo systemctl enable fancontrol.service
 sudo systemclt start fancontrol.service</code>
-
+```
 Check if the Service we just created working properly:
+```ini
+sudo systemctl status fancontrol.py
+```
 
-<code>sudo systemctl status fancontrol.py</code>
-
-
-And here it's my RPi Zero 2 W inside a ZTE H288A modem-router.
+And here it's my RPi Zero 2 W inside a ZTE H288A modem-router:
 
 <img width="600" height="600" alt="Screenshot from 2025-08-27 17-53-39" src="https://github.com/user-attachments/assets/d8aec4b2-c259-44c5-ac9c-ee1d51d28f61" />
 <img width="400" height="600" alt="Screenshot from 2025-08-27 17-54-54" src="https://github.com/user-attachments/assets/f88c8fb8-1437-4dd2-aac2-5149f4c4d4a1" />

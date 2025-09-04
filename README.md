@@ -6,8 +6,9 @@ In my case the RPi is inside my modem-router's case. I'm running the fan at +4.1
 
 
 This is a simplest version if the above are to much solderning and electronics.
-You may need to add a capacitor between +5VDC RPi pin and GND, it depends on the fan you are going to use. 
-<b>Check in datasheet the limitations of your transistor for both cases with or without using a voltage regulator. Also bear in mind the current limitations of RPi +5VDC pin. You are going to stress the RPi voltage regulator if you are planning to use a powerful fan.</b>
+You may need to add a capacitor between +5VDC RPi pin and GND, it depends on the fan you are going to use.<br>
+<b>Check in datasheet the limitations of your transistor for both cases with or without using a voltage regulator.</b><br>
+<b>Also bear in mind the current limitations of RPi +5VDC pin. You are going to stress the RPi voltage regulator if you are planning to use a powerful fan.</b>
 
 <img src="https://github.com/user-attachments/assets/45322af2-d82c-49bf-a290-6fb0d9c5ae36" width="300" height="600" />
 
@@ -42,6 +43,7 @@ If everything works proceed to the next step:
 ```ini
 sudo chmod +x fancontrol.py
 ```
+
 Run the script and test if it's working:
 ```ini
 sudo python3 fancontrol.py
@@ -84,6 +86,7 @@ Check if the Service we just created working properly:
 ```ini
 sudo systemctl status fancontrol.py
 ```
+### ***If you want to change the temprature threshold limits you can open the script with your favorite text editor and change the temprature values to whatever serves your needs.***
 
 ## Here it's my RPi Zero 2 W inside a ZTE H288A modem-router:
 

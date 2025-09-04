@@ -1,5 +1,5 @@
 A simple Python script with some basic electronics for controlling (start/stop) your Raspberry Pi Zero 2 W cooling fan without the need for spinning 24/7 at full speed.
-In my case the RPi is inside on my modem-router case. I'm running the fan at +4.1VDC, this is the most quite and effective voltage for proper cooling and of course for my ears. 🙂
+In my case the RPi is inside my modem-router's case. I'm running the fan at +4.1VDC, this is the most quite and effective voltage for proper cooling and of course for my ears. 🙂
 
 <img src="https://github.com/user-attachments/assets/a74d9070-f7ae-4077-a03b-647dcb066edf" width="600" height="600" />
 

@@ -1,13 +1,14 @@
 A simple Python script with some basic electronics for controlling (start/stop) your Raspberry Pi Zero 2 W cooling fan without the need for spinning 24/7 at full speed.
 In my case the RPi is inside on my modem-router case. I'm running the fan at +4.1VDC, this is the most quite and effective voltage for proper cooling and of course for my ears. 🙂
 
-![Fan Control Raspberry Pi](https://github.com/user-attachments/assets/a74d9070-f7ae-4077-a03b-647dcb066edf)
+<img src="https://github.com/user-attachments/assets/a74d9070-f7ae-4077-a03b-647dcb066edf" width="600" height="600" />
+
 
 
 This is a simplest version if the above are to much solderning and electronics.
 You may need to add a capacitor between +5VDC RPi pin and GND. It depends on the fan you are going to use. <b>Also bear in mind the current limitations of RPi.</b>
 
-![Fan Control Raspberry Pi Simple](https://github.com/user-attachments/assets/45322af2-d82c-49bf-a290-6fb0d9c5ae36)
+<img src="https://github.com/user-attachments/assets/45322af2-d82c-49bf-a290-6fb0d9c5ae36" width="300" height="600" />
 
 
 <b><mark>Dependencies:</mark></b>
@@ -43,23 +44,24 @@ Let’s make a Systemd Service so every time we reboot our system it will start 
 
 <code>sudo nano /etc/systemd/system/fancontrol.service</code>
 
-<mark>Copy and Paste the below and make the appropriate changes to the paths:</mark>
+<mark>Copy and Paste the code below make the appropriate changes to the paths and save it:</mark>
 
-<code>[Unit]
+[Unit]
 Description=Fan Control Service
-After=multi-user.target</code>
+After=multi-user.target
 
-<code>[Service]
+[Service]
 ExecStart=/usr/bin/python3 /home/your_username/RPiGPIOFancontrol-main/fancontrol.py #path to your script
 WorkingDirectory=/home/your_username/RPiGPIOFancontrol-main #path to RPiGPIOFancontrol-main directory
 StandardOutput=journal
 StandardError=journal
 Restart=always
-User=your_username</code>
+User=your_username
 
-<code>[Install]
-WantedBy=multi-user.target</code>
+[Install]
+WantedBy=multi-user.target
 
+After that execute the below commands:
 
 <code>sudo systemctl daemon-reload
 sudo systemctl enable fancontrol.service
@@ -72,8 +74,8 @@ Check if the Service we just created working properly:
 
 And here it's my RPi Zero 2 W inside a ZTE H288A modem-router.
 
-<img width="960" height="846" alt="Screenshot from 2025-08-27 17-53-39" src="https://github.com/user-attachments/assets/d8aec4b2-c259-44c5-ac9c-ee1d51d28f61" />
-<img width="641" height="837" alt="Screenshot from 2025-08-27 17-54-54" src="https://github.com/user-attachments/assets/f88c8fb8-1437-4dd2-aac2-5149f4c4d4a1" />
-<img width="552" height="496" alt="Screenshot from 2025-08-27 17-56-54" src="https://github.com/user-attachments/assets/674acf6a-7fb9-4e34-ba01-2cd6f2ccc304" />
-<img width="1141" height="715" alt="Screenshot from 2025-08-27 17-57-40" src="https://github.com/user-attachments/assets/e3b5be5f-381e-4972-8896-14c8d264ca2f" />
-<img width="557" height="598" alt="Screenshot from 2025-08-27 17-56-15" src="https://github.com/user-attachments/assets/eae51b10-626f-4015-ba2c-afdbffac3aa4" />
+<img width="600" height="600" alt="Screenshot from 2025-08-27 17-53-39" src="https://github.com/user-attachments/assets/d8aec4b2-c259-44c5-ac9c-ee1d51d28f61" />
+<img width="400" height="600" alt="Screenshot from 2025-08-27 17-54-54" src="https://github.com/user-attachments/assets/f88c8fb8-1437-4dd2-aac2-5149f4c4d4a1" />
+<img width="500" height="500" alt="Screenshot from 2025-08-27 17-56-54" src="https://github.com/user-attachments/assets/674acf6a-7fb9-4e34-ba01-2cd6f2ccc304" />
+<img width="600" height="300" alt="Screenshot from 2025-08-27 17-57-40" src="https://github.com/user-attachments/assets/e3b5be5f-381e-4972-8896-14c8d264ca2f" />
+<img width="500" height="500" alt="Screenshot from 2025-08-27 17-56-15" src="https://github.com/user-attachments/assets/eae51b10-626f-4015-ba2c-afdbffac3aa4" />

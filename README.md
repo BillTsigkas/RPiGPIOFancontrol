@@ -11,7 +11,7 @@ You may need to add a capacitor between +5VDC RPi pin and GND, it depends on the
 
 <img src="https://github.com/user-attachments/assets/45322af2-d82c-49bf-a290-6fb0d9c5ae36" width="300" height="600" />
 
-### Prerequisites:
+### Prerequirements:
 
 <b>Ubuntu 22.04 (Didn’t test it with Ubuntu 24.04 on Rpi)</b>
 

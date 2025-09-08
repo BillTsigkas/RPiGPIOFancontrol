@@ -22,7 +22,7 @@ Let's check first if you can read RPi temperature properly:
 ```ini
 vcgencmd measure_temp
 ```
-You will get and answer like this:
+You will get an answer like this:
 ```ini
 temp=52.6'C
 ```

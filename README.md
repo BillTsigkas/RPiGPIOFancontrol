@@ -1,5 +1,5 @@
 A simple Python script with some basic electronics for controlling (start/stop) your Raspberry Pi Zero 2 W cooling fan without the need for spinning 24/7 at full speed.
-In my case, I have placed the RPi inside my modem-router, so the need for proper cooling is important. I'm using a 30mm 5VDC fan running at 4V, this is the most quite (for my ears) and effective voltage for proper cooling (Greek summers) 😃
+In my case, I have placed the RPi inside my modem-router, so the need for proper cooling is important. I'm using a 30mm 5VDC fan running at 4V, this is the most quite (for my ears) and effective voltage for proper cooling (summers are really hot in Greece).
 
 <img src="https://github.com/user-attachments/assets/a74d9070-f7ae-4077-a03b-647dcb066edf" width="600" height="600" />
 
@@ -14,10 +14,12 @@ It's not necessary but if you'll see ripple you may need to add a capacitor betw
 
 ## Prerequirements
 
-<b>Ubuntu 22.04 (Didn’t test it with Ubuntu 24.04 on Rpi)</b><br>
+<b>Ubuntu 22.04 (I haven't tested it with Ubuntu 24.04)</b><br>
 <b>Python3</b><br>
 <b>RPi.GPIO Library</b><br>
 <b>lm-sensors</b>
+
+Let's start the installanion:
 
 ```ini
 sudo apt update && sudo apt upgrade
@@ -79,12 +81,12 @@ After that execute the commands below:
 ```ini
 sudo systemctl daemon-reload
 sudo systemctl enable fancontrol.service
-sudo systemclt start fancontrol.service</code>
+sudo systemclt start fancontrol.service
 ```
 Check if the Service we just created working properly:
 
 ```ini
-sudo systemctl status fancontrol.py
+sudo systemctl status fancontrol.service
 ```
 ### ***If you want to change the temprature threshold limits you can open the script with your favorite text editor and change the temprature values to whatever serves your needs.***
 

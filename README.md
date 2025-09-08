@@ -16,29 +16,24 @@ It's not necessary but if you'll see ripple you may need to add a capacitor betw
 
 <b>Ubuntu 22.04 (I haven't tested it with Ubuntu 24.04)</b><br>
 <b>Python3</b><br>
-<b>RPi.GPIO Library</b><br>
-<b>lm-sensors</b>
+<b>RPi.GPIO Library</b>
 
-Let's start the installanion:
+Let's check first if you can read RPi temperature properly:
+```ini
+vcgencmd measure_temp
+```
+You will get and answer like this:
+```ini
+temp=52.6'C
+```
+
+Now let's begin the installanion:
 
 ```ini
 sudo apt update && sudo apt upgrade
 sudo apt install python3
 sudo apt install python3-rpi.gpio
-sudo apt install lm-sensors
 ```
-
-After the installation check if the lm-sensors can read the CPU temperature:
-
-```ini
-sensors
-```
-or
-```ini
-watch sensors
-```
-
-If everything works proceed to the next step:
 
 ## Download the script and make it executable
 
@@ -46,9 +41,9 @@ If everything works proceed to the next step:
 sudo chmod +x fancontrol.py
 ```
 
-Run the script and test if it's working:
+Run the script to test if it's working:
 ```ini
-sudo python3 fancontrol.py
+./fancontrol.py
 ```
 
 ## Let’s make a Systemd Service so every time we reboot our system it will start automatically
@@ -76,7 +71,7 @@ User=your_username
 WantedBy=multi-user.target
 ```
 
-After that execute the commands below:
+After these execute the commands below:
 
 ```ini
 sudo systemctl daemon-reload

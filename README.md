@@ -1,13 +1,12 @@
-A simple Python script with some basic electronics for controlling (start/stop) your Raspberry Pi Zero 2 W cooling fan without the need for spinning 24/7 or at full speed.
-In my case, I have placed the RPi inside my modem-router, so the need for proper cooling is important. I'm using a 30mm 5VDC fan running at 4V, this is the most quite (for my ears) and effective voltage for proper cooling (summers are really hot in Greece).
+A simple Python script with some basic electronics for controlling (start/stop) your Raspberry Pi Zero 2 W cooling fan without the need for spinning 24/7 or at full speed.<br>
+In my case, I have placed the RPi inside my modem-router, so the need for proper cooling is important. I'm using a 30mm 5VDC fan running at 4V, this is the most quite (for my ears) and effective voltage for proper cooling (Greek summers are really hot).
 
 <img src="https://github.com/user-attachments/assets/a74d9070-f7ae-4077-a03b-647dcb066edf" width="600" height="600" />
 
 
 
-This is a simplest version if the above are to much solderning and electronics.
-It's not necessary but if you'll see ripple you may need to add a capacitor between +5V RPi pin and GND.<br>
-<b>Check the limitations of your transistor in datasheet, for both cases with or without using a voltage regulator.</b><br>
+This is a simplest version if the above are to much solderning and electronics.<br>
+<b>Check the limitations of your transistor in datasheet for both cases with or without using a voltage regulator.</b><br>
 <b>Also bear in mind the current limitations of RPi +5V pin. Avoid to use a very powerful and power-hungry fan.</b>
 
 <img src="https://github.com/user-attachments/assets/45322af2-d82c-49bf-a290-6fb0d9c5ae36" width="300" height="600" />

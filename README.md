@@ -9,7 +9,7 @@ This is a simplest version if the above are to much solderning and electronics.<
 <b>Check the limitations of your transistor in datasheet for both cases with or without using a voltage regulator.</b><br>
 <b>Also bear in mind the current limitations of RPi +5V pin. Avoid to use a very powerful and power-hungry fan.</b>
 
-<img src="https://github.com/user-attachments/assets/45322af2-d82c-49bf-a290-6fb0d9c5ae36" width="300" height="600" />
+<img src="https://github.com/BillTsigkas/RPiGPIOFancontrol/blob/main/Fan%20Control%20Raspberry%20Pi%20Simple.jpg" width="300" height="600" />
 
 ## Prerequirements
 

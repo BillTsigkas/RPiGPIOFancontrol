@@ -1,7 +1,7 @@
 A simple Python script with some basic electronics for controlling (start/stop) your Raspberry Pi Zero 2 W cooling fan without the need for spinning 24/7 or at full speed.<br>
 In my case, I have placed the RPi inside my modem-router, so the need for proper cooling is important. I'm using a 30mm 5VDC fan running at 4V, this is the most quite (for my ears) and effective voltage for proper cooling (Greek summers are really hot).
 
-<img src="https://github.com/user-attachments/assets/a74d9070-f7ae-4077-a03b-647dcb066edf" width="600" height="600" />
+<img src="https://github.com/BillTsigkas/RPiGPIOFancontrol/blob/main/Fan%20Control%20Raspberry%20Pi.png" width="600" height="600" />
 
 
 
